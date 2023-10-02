@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    input[type=text] {
+        background-color: #21252b;
+        padding: 25px 28px;
+        font-size: 22px;
+        /* border: 2px solid #1d1d1d; */
+        border-radius: 5px;
+        caret-color: red;
+        color: white;
+        flex: 1;
+        border: none;
+        margin-top: 8px;
+    }
+
+    input[type=text]:hover {
+        border: 2px solid #000;
+
+    }
+
+    input[type=button] {
+        padding: 0px;
+        margin: 8px;
+        width: 60px;
+        height: 60px;
+        color: white;
+        outline: none;
+        font-size: 25px;
+        font-weight: bolder;
+        box-shadow: -1px -1px 15px rgb(255, 255, 255, 0.1), -8px -8px 15px rgb(255, 255, 255, 0.1);
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+    }
+
+    .cal {
+        background-color: #21252b;
+        display: inline-block;
+        border-radius: 10px;
+    }
+
+    body {
+        padding: 7px;
+
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 0px;
+        font-style: italic;
+        color: rgb(70, 157, 70);
+        font-size: 30px;
+        text-decoration: underline;
+        text-decoration-color: black;
+    }
+
+    #m {
+        background-color: rgba(255, 0, 0, 0.637);
+        box-shadow: -1px -1px 15px rgb(255, 255, 255, 0.1), -8px -8px 15px rgb(255, 255, 255, 0.1);
+        width: 120px;
+
+    }
+
+   
+    #n {
+        background-color: rgb(12, 128, 244);
+        box-shadow: -1px -1px 15px rgb(255, 255, 255, 0.1), -8px -8px 15px rgb(255, 255, 255, 0.1);
+        width: 140px;
+
+    }
+
+    .container {
+        /* background-color: #222121; */
+    }
+</style>
+
+<body>
+    <center>
+        <h1>CALCULATOR</h1>
+        <div class="container">
+            <div class="cal">
+                <input type="text" name="" id="num">
+                <br>
+                <br>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="button" id="m" value="AC" onclick="CLR()">
+                            <input type="button" value="%" onclick="btnnum('%')"> 
+                            <input type="button" value="÷" onclick="btnnum('÷')">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type="button" value="7" onclick="btnnum('7')">
+                            <input type="button" value="8" onclick="btnnum('8')">
+                            <input type="button" value="9" onclick="btnnum('9')">
+                            <input type="button" value="*" onclick="btnnum('*')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="4" onclick="btnnum('4')">
+                            <input type="button" value="5" onclick="btnnum('5')">
+                            <input type="button" value="6" onclick="btnnum('6')">
+                            <input type="button" value="-" onclick="btnnum('-')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="1" onclick="btnnum('1')">
+                            <input type="button" value="2" onclick="btnnum('2')">
+                            <input type="button" value="3" onclick="btnnum('3')">
+                            <input type="button" value="+" onclick="btnnum('+')">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type="button" value="." onclick="btnnum('.')">
+                            <input type="button" value="0" onclick="btnnum('0')">
+                            <input type="button" id="n" value="=" onclick="solve('=')">
+                        </td>
+                    </tr>
+                </table>
+    </center>
+    </div>
+    </div>
+
+
+    <script>
+        function btnnum(params) {
+            document.getElementById("num").value += params;
+        }
+        function solve() {
+            var x = document.getElementById("num").value;
+            var y = eval(x)
+            document.getElementById("num").value = y;
+        }
+        function CLR() {
+            document.getElementById("num").value = " ";
+        }
+
+    </script>
+</body>
+
+</html>
